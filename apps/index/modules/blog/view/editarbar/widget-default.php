@@ -7,7 +7,7 @@
 $login = $_SESSION['nombre_usuario'];
 $password = $_SESSION['password'];
 $id = $_GET["id"];
-var_dump($id);
+//var_dump($id);
 $url = 'http://api.catalogos.local/bares.php/?id='.$_GET["id"];
 $ch = curl_init();
 curl_setopt($ch, CURLOPT_URL,$url);
@@ -20,8 +20,6 @@ curl_close($ch);
 $bares = $data['bar'];
 $bar=$bares[0];
 
-
-//var_dump( $autor["nombre"]);
 ?>
 
 
