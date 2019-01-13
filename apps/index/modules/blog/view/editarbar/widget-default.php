@@ -7,7 +7,8 @@
 $login = $_SESSION['nombre_usuario'];
 $password = $_SESSION['password'];
 $id = $_GET["id"];
-$url = 'http://api.catalogos.local/bares.php/'.$_GET["id"];
+var_dump($id);
+$url = 'http://api.catalogos.local/bares.php/?id='.$_GET["id"];
 $ch = curl_init();
 curl_setopt($ch, CURLOPT_URL,$url);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER,1);
@@ -15,8 +16,9 @@ curl_setopt($ch, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
 curl_setopt($ch, CURLOPT_USERPWD, "$login:$password");
 $result = curl_exec($ch);
 $data = json_decode($result,true);
-$bar = $data['bar'][$id-1];
 curl_close($ch);
+$bares = $data['bar'];
+$bar=$bares[0];
 
 
 //var_dump( $autor["nombre"]);
