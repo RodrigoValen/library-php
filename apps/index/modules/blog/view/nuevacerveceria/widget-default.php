@@ -13,11 +13,17 @@
                   <i class="fa fa-male"></i> Cervecerías
                 </div>
                 <div class="widget-body">
-<form class="form-horizontal" role="form" method="post" action="./index.php?action=addusuario">
+<form class="form-horizontal" role="form" method="post" action="./index.php?action=addcerveceria">
   <div class="form-group">
     <label for="inputEmail1" class="col-lg-2 control-label">Nombre Cevecería</label>
     <div class="col-lg-10">
       <input type="text" name="nombre"  required class="form-control" id="inputEmail1" placeholder="Nombre Cevecería">
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="col-lg-offset-2 col-lg-10">
+      <button type="submit" class="btn btn-default">Agregar Cervecería</button>
     </div>
   </div>
 

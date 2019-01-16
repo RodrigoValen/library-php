@@ -14,7 +14,7 @@ curl_setopt($ch, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
 curl_setopt($ch, CURLOPT_USERPWD, "$login:$password"); 
 $result= curl_exec($ch); 
 $libros = json_decode($result,true);
-$autores = $libros['autores'];
+$autores = $libros['cerveza'];
 curl_close($ch); 
 
 
@@ -48,8 +48,8 @@ curl_close($ch);
                         <td><?php echo $autor["nombre"]; ?></td>
                         <td>
                         
-                        <a href="./index.php?view=editlibro&id=<?php echo $autor["id"]; ?>" class="btn btn-warning btn-xs">Editar</a>
-                        <a href="./index.php?action=dellibro&id=<?php echo $autor["id"]; ?>" class="btn btn-danger btn-xs">Eliminar</a>
+                        <a href="./index.php?view=editcerveza&id=<?php echo $autor["id"]; ?>" class="btn btn-warning btn-xs">Editar</a>
+                        <a href="./index.php?action=delcerveza&id=<?php echo $autor["id"]; ?>" class="btn btn-danger btn-xs">Eliminar</a>
                         </td>
                         </tr>
                       <?php endforeach; ?>

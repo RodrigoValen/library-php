@@ -11,13 +11,11 @@ if (count($_POST) > 0)
     $pass = $_SESSION['password'];
 
     $post = [
-        'nombre' => $_POST["nombre"],
-        'genero' => $_POST["genero"],
-        'precio'   => $_POST["precio"],
-	'autores'   => $_POST["autores"],
+        'nombre' => $_POST["nombre"]
     ];
+    $url ='http://api.catalogos.local/productos.php/?id='.$_POST["id"];
 
-    $ch = curl_init('http://localhost/catalogo-libros/libros/'.$_POST["id"]);
+    $ch = curl_init($url);
     curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "PUT");
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
     curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($post));
@@ -28,7 +26,7 @@ if (count($_POST) > 0)
 
     curl_close($ch);
 
-    Core::redir("./index.php?view=libros");
+    Core::redir("./index.php?view=producto");
 
 }
 

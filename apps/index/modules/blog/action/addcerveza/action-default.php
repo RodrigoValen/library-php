@@ -10,15 +10,12 @@ if(count($_POST)>0)
     $pass = $_SESSION['password'];
 
     $post = [
-        'nombre' => $_POST["nombre"],
-        'genero' => $_POST["genero"],
-        'precio'   => $_POST["precio"],
-        'autores' => $_POST["autores"]
+        'nombre' => $_POST["nombre"]        
     ];
 
     //echo json_encode($post); exit;
 
-    $ch = curl_init('http://localhost/catalogo-libros/productos/');
+    $ch = curl_init('http://localhost/catalogo-libros/productos.php/');
     curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST"); 
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
     curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($post));

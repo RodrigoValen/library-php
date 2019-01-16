@@ -1,23 +1,3 @@
-<?php
-
-// API Todos los autores :
-
-$login = $_SESSION['nombre_usuario'];
-$password = $_SESSION['password'];
-
-$url = 'http://localhost/catalogo-libros/productos/';
-$ch = curl_init();
-curl_setopt($ch, CURLOPT_URL,$url);
-curl_setopt($ch, CURLOPT_RETURNTRANSFER,1);
-curl_setopt($ch, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
-curl_setopt($ch, CURLOPT_USERPWD, "$login:$password");
-$result = curl_exec($ch);
-$autores = json_decode($result,true);
-$autores = $autores['autores'];
-curl_close($ch);
-
-
-?>
       <div class="page-content">
 
         <!-- Header Bar -->
@@ -28,62 +8,47 @@ curl_close($ch);
           <div class="row">
             <div class="col-lg-12">
             <h2>Nueva Cerveza</h2>
-<?php if(count($autores)==0):?>
-  <p class="alert alert-danger">No hay Cervezas</p>
-<?php endif; ?>
-
-
-
               <div class="widget">
                 <div class="widget-title">
-                  <i class="fa fa-male"></i> Cervezas
+                  <i class="fa fa-male"></i> Cerveza
                 </div>
                 <div class="widget-body">
 <form class="form-horizontal" role="form" method="post" action="./index.php?action=addcerveza">
-
-
   <div class="form-group">
-    <label for="inputEmail1" class="col-lg-2 control-label">Nombre de la cerveza</label>
+    <label for="inputEmail1" class="col-lg-2 control-label">Nombre Cerveza</label>
     <div class="col-lg-10">
-      <input type="text" name="nombre"  required class="form-control" id="inputEmail1" placeholder="Nombre de la cerveza">
+      <input type="text" name="nombre"  required class="form-control" id="inputEmail1" placeholder="Nombre Cerveza">
     </div>
   </div>
-
- <!-- <div class="form-group">
-    <label for="inputEmail1" class="col-lg-2 control-label">Genero</label>
-    <div class="col-lg-10">
-      <input type="text" name="genero" class="form-control" id="inputEmail1"  placeholder="Genero">
-    </div>
-  </div>
-  
-    <div class="form-group">
-    <label for="inputEmail1" class="col-lg-2 control-label">Precio</label>
-    <div class="col-lg-4">
-      <input type="text" name="precio" class="form-control" id="inputEmail1" required placeholder="Precio">
-    </div>
-</div> 
-   
-    <?php if(count($autores)>0):?>
-  <div class="form-group">
-    <label for="inputEmail1" class="col-lg-2 control-label">Autores</label>
-    <div class="col-lg-4">
-      <select name="autores[]" class="form-control" multiple required>
-        <?php foreach($autores as $autor):?>
-          <option value="<?php echo $autor["id"]; ?>"><?php echo $autor["nombre"];?> </option>
-        <?php endforeach; ?>
-      </select>
-    </div>
-  </div>
-    <?php endif; ?> -->
-
-
 
   <div class="form-group">
     <div class="col-lg-offset-2 col-lg-10">
       <button type="submit" class="btn btn-default">Agregar Cerveza</button>
     </div>
   </div>
-</form>
+
+ <!-- <div class="form-group">
+    <label for="inputEmail1" class="col-lg-2 control-label">Email</label>
+    <div class="col-lg-10">
+      <input type="text" name="email" class="form-control" id="inputEmail1" placeholder="Email">
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="inputEmail1" class="col-lg-2 control-label">Password</label>
+    <div class="col-lg-10">
+      <input type="text" name="password" class="form-control" id="inputEmail1" placeholder="Password">
+    </div>
+  </div>
+
+
+
+  <div class="form-group">
+    <div class="col-lg-offset-2 col-lg-10">
+      <button type="submit" class="btn btn-default">Agregar Usuario</button>
+    </div>
+  </div>
+</form>.  -->
                 </div>
               </div>
             </div>
