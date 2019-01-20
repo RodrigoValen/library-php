@@ -2,7 +2,7 @@
           <div class="col-xs-12">
             <div class="meta pull-left">
               <div class="page">
-                Biblioteca
+                Mantenedor
               </div>
               <div class="breadcrumb-links">
                 Administrador
@@ -17,14 +17,6 @@
                   <li class="dropdown-header">
                     Administrador
                   </li>
-<!--
-                  <li class="divider"></li>
-                  <li class="link">
-                    <a href="#">
-                      Profile
-                    </a>
-                  </li>
--->
                   <li class="divider"></li>
                   <li class="link">
                     <a href="./logout.php">

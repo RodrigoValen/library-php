@@ -1,11 +1,5 @@
 <?php
 
-/*$a = new SQLMan();
-$a->tablename = "autor";
-$autores= $a->select("one","");*/
-
-// print_r($autores);
-
 $login = $_SESSION['nombre_usuario'];
 $password = $_SESSION['password'];
 $url = 'http://api.catalogos.local/Cervecerias.php'; 
