@@ -43,16 +43,16 @@
 	   
         <li class="sidebar-list">
           <a href="./index.php?view=producto">Producto <span class="menu-icon fa fa-book"></span></a>
-        </li>
+          <a href="./index.php?view=cervecerias">Cervecerias <span class="menu-icon fa fa-beer"></span></a>
+          <a href="./index.php?view=bares">Bares <span class="menu-icon fa fa-male"></span></a>
+          <a href="./index.php?view=bares">Ingreso <span class="menu-icon fa fa-user"></span></a>
+          </li>
 
         <!--<li class="sidebar-title separator"><span>Varios</span></li>
         li class="sidebar-list"> -->
 
-		<li class="sidebar-list">
-          <a href="./index.php?view=cervecerias">Cervecerias <span class="menu-icon fa fa-user"></span></a>
-          <a href="./index.php?view=bares">Bares <span class="menu-icon fa fa-male"></span></a>
-        </li>
-
+          
+        
 
 <!--
       <div class="sidebar-footer">
