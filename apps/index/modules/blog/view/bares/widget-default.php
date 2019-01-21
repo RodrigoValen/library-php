@@ -17,7 +17,6 @@ curl_setopt($ch, CURLOPT_USERPWD, "$login:$password");
 $result= curl_exec($ch); 
 $data = json_decode($result,true);
 $bares = $data['bar'];
-//var_dump($autores);
 
 curl_close($ch); 
 

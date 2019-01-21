@@ -3,11 +3,11 @@
 define('LBROOT',getcwd()); // LegoBox Root ... the server root
 include("lib/legobox/lib/Database.php");
 
-$user = $_POST['email'];
+$user = $_POST['nombre'];
 $pass = $_POST['password'];
 $base = new Database();
 $con = $base->connect();
-$sql = "select * from usuario where correo= \"".$user."\" and password= \"".$pass."\"";
+$sql = "select * from usuarios where nombre= \"".$user."\" and password= \"".$pass."\"";
 
 
 
@@ -15,10 +15,9 @@ print $sql;
 $query = $con->query($sql);
 $found = false;
 $userid = null;
-///print $query;
 while($r = $query->fetch_array()){
 	$found = true ;
-	$userid = $r['id'];
+	$userid = $r['id_bar'];
 }
 
 if($found==true) {
