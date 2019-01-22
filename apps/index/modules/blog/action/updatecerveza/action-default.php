@@ -13,8 +13,8 @@ if (count($_POST) > 0)
     $post = [
         'nombre' => $_POST["nombre"]
     ];
-    $url ='http://api.catalogos.local/productos.php/?id='.$_POST["id"];
-
+    $url ='http://api.catalogos.local/productos.php/?id_producto='.$_POST["id"];
+    print_r($url);
     $ch = curl_init($url);
     curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "PUT");
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
