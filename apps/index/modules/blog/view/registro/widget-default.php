@@ -74,7 +74,7 @@ function getproducto(){
                       <tbody>
                       <?php foreach($registros as $registro):?>
                         <tr>
-                        <td><?php 
+                        <td><?php
                             $bar = getbar($registro["id_cerveceria"]);
                             $producto = getbar($registro["id_producto"]);
                             echo $registro["receptor"];
