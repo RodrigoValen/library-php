@@ -15,7 +15,7 @@ curl_setopt($ch, CURLOPT_USERPWD, "$login:$password");
 $result= curl_exec($ch); 
 $libros = json_decode($result,true);
 $autores = $libros['cerveza'];
-var_dump($autores);
+print_r($autores);
 curl_close($ch); 
 
 
@@ -47,11 +47,9 @@ curl_close($ch);
                       <?php foreach($autores as $autor):?>
                         <tr>
                         <td><?php echo $autor["nombre"];
-                          echo $autor["      "];
-                          echo $autor["fecha_elaboracion"];
                         ?></td>
                         <td>
-                        
+
                         <a href="./index.php?view=editcerveza&id=<?php echo $autor["id"]; ?>" class="btn btn-warning btn-xs">Editar</a>
                         <a href="./index.php?action=delcerveza&id=<?php echo $autor["id"]; ?>" class="btn btn-danger btn-xs">Eliminar</a>
                         </td>

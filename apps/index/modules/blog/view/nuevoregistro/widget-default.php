@@ -2,28 +2,39 @@
       <?php
       $login = $_SESSION['nombre_usuario'];
       $password = $_SESSION['password'];
-      $url = 'http://api.catalogos.local/Cervecerias.php'; 
+      $url = 'http://api.catalogos.local/Cervecerias.php';
       $ch = curl_init();
-      curl_setopt($ch, CURLOPT_URL,$url); 
-      curl_setopt($ch, CURLOPT_RETURNTRANSFER,1); 
-      curl_setopt($ch, CURLOPT_HTTPAUTH, CURLAUTH_BASIC); 
-      curl_setopt($ch, CURLOPT_USERPWD, "$login:$password"); 
-      $result= curl_exec($ch); 
+      curl_setopt($ch, CURLOPT_URL,$url);
+      curl_setopt($ch, CURLOPT_RETURNTRANSFER,1);
+      curl_setopt($ch, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
+      curl_setopt($ch, CURLOPT_USERPWD, "$login:$password");
+      $result= curl_exec($ch);
       $data = json_decode($result,true);
       $cervcerias = $data['cerveceria'];
-      curl_close($ch); 
-      
-      $url2 = 'http://api.catalogos.local/productos.php/'; 
+      curl_close($ch);
+
+      $url = 'http://api.catalogos.local/productos.php/';
       $ch = curl_init();
-      curl_setopt($ch, CURLOPT_URL,$url2); 
-      curl_setopt($ch, CURLOPT_RETURNTRANSFER,1); 
-      curl_setopt($ch, CURLOPT_HTTPAUTH, CURLAUTH_BASIC); 
-      curl_setopt($ch, CURLOPT_USERPWD, "$login:$password"); 
-      $result= curl_exec($ch); 
-      $data2 = json_decode($result,true);
-      $productos = $data2['cerveza'];
-      curl_close($ch); 
-      
+      curl_setopt($ch, CURLOPT_URL,$url);
+      curl_setopt($ch, CURLOPT_RETURNTRANSFER,1);
+      curl_setopt($ch, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
+      curl_setopt($ch, CURLOPT_USERPWD, "$login:$password");
+      $result= curl_exec($ch);
+      $data = json_decode($result,true);
+      $productos = $data['cerveza'];
+      curl_close($ch);
+
+      $url = 'http://api.catalogos.local/bares.php/';
+      $ch = curl_init();
+      curl_setopt($ch, CURLOPT_URL,$url);
+      curl_setopt($ch, CURLOPT_RETURNTRANSFER,1);
+      curl_setopt($ch, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
+      curl_setopt($ch, CURLOPT_USERPWD, "$login:$password");
+      $result= curl_exec($ch);
+      $data = json_decode($result,true);
+      $bares = $data['bar'];
+      curl_close($ch);
+
       ?>
 
 
@@ -37,21 +48,48 @@
             <h2>Nueva registro</h2>
               <div class="widget">
                 <div class="widget-title">
-                  <i class="fa fa-male"></i> Registro 
+                  <i class="fa fa-male"></i> Registro
                 </div>
                 <div class="widget-body">
 
-      <form class="form-horizontal" role="form" method="post" action="./index.php?action=addcerveceria">
-      
+      <form class="form-horizontal" role="form" method="post" action="./index.php?action=addregistro">
+
+
+      <div class="form-group">
+      <label for="inputEmail1" class="col-lg-2 control-label">Bares</label>
+      <div class="col-lg-10">
+      <?php if(count($bares)>0):?>
+          <select name="cerveceria" style="width: 120px">
+            <?php foreach($bares as $bar):?>
+              <option value="<?php echo $bar["id"]; ?>"><?php echo $bar["nombre"];?> </option>
+            <?php endforeach; ?>
+      </select>
+      <?php endif; ?>
+      </div>
+      </div>
 
       <?php if(count($cervcerias)==0):?>
       <p class="alert alert-danger">No hay Cervecerías resgistradas</p>
       <?php endif; ?>
 
       <div class="form-group">
+      <label for="inputEmail1" class="col-lg-2 control-label">Factura</label>
+      <div class="col-lg-10">
+        <input type="text" name="factura" class="form-control" id="linea" placeholder="Factura">
+      </div>
+      </div>
+
+      <div class="form-group">
+      <label for="inputEmail1" class="col-lg-2 control-label">Receptor</label>
+      <div class="col-lg-10">
+        <input type="text" name="linea" class="form-control" id="linea" placeholder="Receptor">
+      </div>
+      </div>
+
+      <div class="form-group">
       <label for="inputEmail1" class="col-lg-2 control-label">Línea</label>
       <div class="col-lg-10">
-        <input type="text" name="linea" class="form-control" id="linea" placeholder="Línea">
+        <input type="text" name="receptor" class="form-control" id="receptor" placeholder="Línea">
       </div>
       </div>
 
@@ -67,7 +105,7 @@
         <?php endif; ?>
       </div>
       </div>
-      
+
       <div class="form-group">
       <label for="inputEmail1" class="col-lg-2 control-label">Fecha Elaboración</label>
       <div class="col-lg-10">
@@ -95,13 +133,14 @@
       </div>
       </div>
 
+
       <div class="form-group">
       <label for="inputEmail1" class="col-lg-2 control-label">Tipo de Barril</label>
       <div class="col-lg-10">
       <input type="text" name="tipo_barril" class="form-control" id="tipo_barril" placeholder="Tipo de Barril">
       </div>
       </div>
-      
+
       <div class="form-group">
       <label for="inputEmail1" class="col-lg-2 control-label">Etiqueta</label>
       <div class="col-lg-10">
@@ -114,7 +153,6 @@
       <button type="submit" class="btn btn-default">Registrar</button>
       </div>
       </div>
-      
                 </div>
               </div>
             </div>

@@ -37,7 +37,7 @@ curl_close($ch);
 <?php endif; ?>
               <div class="widget">
                 <div class="widget-title">
-                  <i class="fa fa-male"></i> Bares
+                  <i class="fa fa-male"></i> Bares Dirección
                 </div>
                 <div class="widget-body no-padding">
 
