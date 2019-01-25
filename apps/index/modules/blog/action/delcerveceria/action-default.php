@@ -14,9 +14,7 @@ if (count($_GET) > 0)
     curl_setopt($ch, CURLOPT_USERPWD, "$user:$pass");
 
     $response = curl_exec($ch);
-
     curl_close($ch);
-
 
 
      Core::redir("./index.php?view=cervecerias");

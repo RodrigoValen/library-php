@@ -22,7 +22,7 @@
 		$response = curl_exec($ch);
 		curl_close($ch);
 
-		var_dump(json_encode($post));
+
 
 	Core::redir("./index.php?view=cervecerias");
 

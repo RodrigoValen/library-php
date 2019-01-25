@@ -22,7 +22,7 @@
 			'etiqueta' => $_POST["etiqueta"]
 		];
 
-
+		echo '<pre>'; var_dump($post);
 		$ch = curl_init('http://api.catalogos.local/resgistros.php');
 		curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
@@ -34,7 +34,7 @@
 
 
 
-		var_dump(json_encode($post));exit;
+		var_dump(json_encode($response));exit;
 
 	Core::redir("./index.php?view=registro");
 

@@ -18,6 +18,7 @@ $result= curl_exec($ch);
 $data = json_decode($result,true);
 $bares = $data['bar'];
 
+
 curl_close($ch); 
 
 
@@ -37,28 +38,31 @@ curl_close($ch);
 <?php endif; ?>
               <div class="widget">
                 <div class="widget-title">
-                  <i class="fa fa-male"></i> Bares Dirección
+                  <i class="fa fa-male"></i> Bares 
                 </div>
                 <div class="widget-body no-padding">
 
                   <div class="table-responsive">
 <?php if(count($bares)>0):?>
-                    <table class="table">
-                      <tbody>
-                      <?php foreach($bares as $bar):?>
-                        <tr>
-                        <td><?php echo $bar["nombre"];
-                        echo "      ";
-                          echo $bar["direccion_sucursal"]; 
-
-                        ?></td>
-
-                        <td>
-                        <a href="./index.php?view=editarbar&id=<?php echo $bar["id"]; ?>" class="btn btn-warning btn-xs">Editar</a>
-                        <a href="./index.php?action=delbar&id=<?php echo $bar["id"]; ?>" class="btn btn-danger btn-xs">Eliminar</a>
-                        </td>
+<table class="table" >
+                    <thead>
+                    <tr>
+                        <td>Nombre</td>
+                        <td>Sucursal</td>
+                        <td>Direccion</td>
+                        <td>Acciones</td>
                         </tr>
-                      <?php endforeach; ?>
+                    </thead>
+                      <tbody>
+                      <?php foreach ($bares as $bar): ?>
+                        <tr>
+                        <td><?php echo $bar["nombre"]; ?></td>
+                        <td><?php echo $bar["nombre_sucursal"]; ?></td>
+                        <td><?php echo $bar["direccion_sucursal"]; ?></td>
+                        <td><a href="./index.php?view=editarbar&id=<?php echo $bar["id"]; ?>" class="btn btn-warning btn-xs">Editar</a>
+                        <a href="./index.php?action=delbar&id=<?php echo $bar["id"]; ?>" class="btn btn-danger btn-xs">Eliminar</a></td>
+                        </tr>
+                      <?php endforeach;?>
                       </tbody>
                     </table>
 <?php endif; ?>
