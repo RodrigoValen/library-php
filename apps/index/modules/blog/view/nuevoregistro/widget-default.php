@@ -59,7 +59,7 @@
       <label for="inputEmail1" class="col-lg-2 control-label">Bares</label>
       <div class="col-lg-10">
       <?php if(count($bares)>0):?>
-          <select name="cerveceria" style="width: 120px">
+          <select name="bar" style="width: 120px">
             <?php foreach($bares as $bar):?>
               <option value="<?php echo $bar["id"]; ?>"><?php echo $bar["nombre"];?> </option>
             <?php endforeach; ?>
@@ -75,7 +75,7 @@
       <div class="form-group">
       <label for="inputEmail1" class="col-lg-2 control-label">Factura</label>
       <div class="col-lg-10">
-        <input type="text" name="factura" class="form-control" id="linea" placeholder="Factura">
+        <input type="text" name="factura" class="form-control" id="factura" placeholder="Factura">
       </div>
       </div>
 
@@ -109,14 +109,14 @@
       <div class="form-group">
       <label for="inputEmail1" class="col-lg-2 control-label">Fecha Elaboración</label>
       <div class="col-lg-10">
-      <input id="fecha_elaboracion" type="date">
+      <input name="fecha_elaboracion" type="date">
       </div>
       </div>
 
       <div class="form-group">
       <label for="inputEmail1" class="col-lg-2 control-label">Fecha Vencimiento</label>
       <div class="col-lg-10">
-      <input id="fecha_vencimiento" type="date">
+      <input name="fecha_vencimiento" type="date">
       </div>
       </div>
 

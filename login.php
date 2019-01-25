@@ -26,6 +26,7 @@ if($found==true) {
 	$_SESSION['id']=$userid ;
 	$_SESSION['nombre_usuario']=$user;
 	$_SESSION['password']=$pass;
+
 //	setcookie('userid',$userid);
 //	print $_SESSION['userid'];
 	print "Cargando ... $user";

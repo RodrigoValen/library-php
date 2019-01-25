@@ -39,8 +39,8 @@
         <li class="sidebar-list">
           <a href="./">Inicio <span class="menu-icon fa fa-home"></span></a>
         </li>
-       
-	   
+
+
         <li class="sidebar-list">
           <a href="./index.php?view=producto">Producto <span class="menu-icon fa fa-book"></span></a>
           <a href="./index.php?view=cervecerias">Cervecerias <span class="menu-icon fa fa-beer"></span></a>

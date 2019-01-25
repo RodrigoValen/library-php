@@ -6,17 +6,17 @@
 // print_r($autores);
 $login = $_SESSION['nombre_usuario'];
 $password = $_SESSION['password'];
-$url = 'http://api.catalogos.local/productos.php/'; 
+$url = 'http://api.catalogos.local/productos.php/';
 $ch = curl_init();
-curl_setopt($ch, CURLOPT_URL,$url); 
-curl_setopt($ch, CURLOPT_RETURNTRANSFER,1); 
-curl_setopt($ch, CURLOPT_HTTPAUTH, CURLAUTH_BASIC); 
-curl_setopt($ch, CURLOPT_USERPWD, "$login:$password"); 
-$result= curl_exec($ch); 
+curl_setopt($ch, CURLOPT_URL,$url);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER,1);
+curl_setopt($ch, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
+curl_setopt($ch, CURLOPT_USERPWD, "$login:$password");
+$result= curl_exec($ch);
 $libros = json_decode($result,true);
 $autores = $libros['cerveza'];
 print_r($autores);
-curl_close($ch); 
+curl_close($ch);
 
 
 ?>
