@@ -95,7 +95,7 @@ echo $producto;?></td>
                       <?php endforeach;?>
                       </tbody>
                     </table>
-                    <?php endif;?>
+                    <?php endif;?> 
                   </div>
                 </div>
               </div>
