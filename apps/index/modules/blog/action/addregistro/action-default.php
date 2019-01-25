@@ -8,6 +8,7 @@
 		$pass = $_SESSION['password'];
 		$fecha = date("Y-m-d H:i:s");
 
+
 		$post = [
 			'id_bar' => $_POST["bar"],
 			'id_cerveceria' => $_POST["cerveceria"],
@@ -22,8 +23,7 @@
 			'etiqueta' => $_POST["etiqueta"]
 		];
 
-		echo '<pre>'; var_dump($post);
-		$ch = curl_init('http://api.catalogos.local/resgistros.php');
+		$ch = curl_init('http://api.catalogos.local/registros.php');
 		curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 		curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($post));
@@ -31,10 +31,6 @@
 		curl_setopt($ch, CURLOPT_USERPWD, "$user:$pass");
 		$response = curl_exec($ch);
 		curl_close($ch);
-
-
-
-		var_dump(json_encode($response));exit;
 
 	Core::redir("./index.php?view=registro");
 

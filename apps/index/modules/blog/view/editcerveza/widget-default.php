@@ -1,7 +1,4 @@
 <?php
-
-
-
 // API Todos los autores :
 
 $login = $_SESSION['nombre_usuario'];

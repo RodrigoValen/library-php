@@ -10,9 +10,8 @@
     $post = [
         'nombre' => $_POST["nombre"]
         ];
-    
-    $url ='http://api.catalogos.local/cervecerias.php/?id_cerveceria='.$_POST["id"];
 
+    $url ='http://api.catalogos.local/cervecerias.php/?id_cerveceria='.$_POST["id"];
     $ch = curl_init($url);
     curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "PUT");
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
@@ -22,7 +21,6 @@
     $response = curl_exec($ch);
     curl_close($ch);
 
-    
 Core::redir("./index.php?view=cervecerias");
 
 ?>
