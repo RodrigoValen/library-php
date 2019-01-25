@@ -13,7 +13,6 @@ if(count($_POST)>0)
         'nombre_sucursal' => $_POST["nombre_sucursal"],
         'direccion_sucursal' => $_POST["direccion_sucursal"]
     ];
-    var_dump($post);
 
     $ch = curl_init('http://api.catalogos.local/bares.php');
     curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");

@@ -31,7 +31,6 @@
 		curl_setopt($ch, CURLOPT_USERPWD, "$user:$pass");
 		$response = curl_exec($ch);
 		curl_close($ch);
-		echo '<pre>'; print_r($response);exit;
 
 	Core::redir("./index.php?view=registro");
 
