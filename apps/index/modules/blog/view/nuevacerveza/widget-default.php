@@ -20,6 +20,12 @@
       <input type="text" name="nombre"  required class="form-control" id="inputEmail1" placeholder="Nombre Cerveza">
     </div>
   </div>
+  <div class="form-group">
+    <label for="inputEmail1" class="col-lg-2 control-label"> Familia Cerveza</label>
+    <div class="col-lg-10">
+      <input type="text" name="familia"  required class="form-control" id="inputEmail1" placeholder="Familia Cerveza">
+    </div>
+  </div>
 
   <div class="form-group">
     <div class="col-lg-offset-2 col-lg-10">

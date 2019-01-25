@@ -10,7 +10,8 @@ if(count($_POST)>0)
     $pass = $_SESSION['password'];
 
     $post = [
-        'nombre' => $_POST["nombre"]
+        'nombre' => $_POST["nombre"],
+        'familia' => $_POST["familia"]
     ];
 
     $ch = curl_init('http://localhost/catalogo-libros/productos.php/');
