@@ -9,9 +9,8 @@ curl_setopt($ch, CURLOPT_RETURNTRANSFER,1);
 curl_setopt($ch, CURLOPT_HTTPAUTH, CURLAUTH_BASIC); 
 curl_setopt($ch, CURLOPT_USERPWD, "$login:$password"); 
 $result= curl_exec($ch); 
-$libros = json_decode($result,true);
-$autores = $libros['cerveceria'];
-//var_dump($autores);
+$data = json_decode($result,true);
+$cervecerias = $data['cerveceria'];
 curl_close($ch); 
 
 
@@ -26,7 +25,7 @@ curl_close($ch);
             <div class="col-lg-12">
                   <a href="./index.php?view=nuevacerveceria" class="btn btn-default pull-right">Nueva Cervecería</a>
             <h1>Cervecería</h1>
-<?php if(count($autores)==0):?>
+<?php if(count($cervecerias)==0):?>
   <p class="alert alert-danger">No hay Cervecerías resgistradas</p>
 <?php endif; ?>
               <div class="widget">
@@ -36,15 +35,15 @@ curl_close($ch);
                 <div class="widget-body no-padding">
 
                   <div class="table-responsive">
-<?php if(count($autores)>0):?>
+<?php if(count($cervecerias)>0):?>
                     <table class="table">
                       <tbody>
-                      <?php foreach($autores as $autor):?>
+                      <?php foreach($cervecerias as $cerveceria):?>
                         <tr>
-                        <td><?php echo $autor["nombre"]; ?></td>
+                        <td><?php echo $cerveceria["nombre"]; ?></td>
                         <td>
-                        <a href="./index.php?view=editcerveceria&id=<?php echo $autor["id"]; ?>" class="btn btn-warning btn-xs">Editar</a>
-                        <a href="./index.php?action=delcerveceria&id=<?php echo $autor["id"]; ?>" class="btn btn-danger btn-xs">Eliminar</a>
+                        <a href="./index.php?view=editcerveceria&id=<?php echo $cerveceria["id"]; ?>" class="btn btn-warning btn-xs">Editar</a>
+                        <a href="./index.php?action=delcerveceria&id=<?php echo $cerveceria["id"]; ?>" class="btn btn-danger btn-xs">Eliminar</a>
                         </td>
                         </tr>
                       <?php endforeach; ?>

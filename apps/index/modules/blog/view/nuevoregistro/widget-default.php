@@ -82,14 +82,14 @@
       <div class="form-group">
       <label for="inputEmail1" class="col-lg-2 control-label">Receptor</label>
       <div class="col-lg-10">
-        <input type="text" name="linea" class="form-control" id="linea" placeholder="Receptor">
+        <input type="text" name="receptor" class="form-control" id="receptor" placeholder="Receptor">
       </div>
       </div>
 
       <div class="form-group">
       <label for="inputEmail1" class="col-lg-2 control-label">Línea</label>
       <div class="col-lg-10">
-        <input type="text" name="receptor" class="form-control" id="receptor" placeholder="Línea">
+        <input type="text" name="linea" class="form-control" id="linea" placeholder="Línea">
       </div>
       </div>
 
