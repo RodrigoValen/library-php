@@ -11,7 +11,8 @@ if (count($_POST) > 0)
     $pass = $_SESSION['password'];
 
     $post = [
-        'nombre' => $_POST["nombre"]
+        'nombre' => $_POST["nombre"],
+        'familia' => $_POST['familia']
     ];
     $url ='http://api.catalogos.local/productos.php/?id_producto='.$_POST["id"];
     print_r($url);
