@@ -9,9 +9,6 @@ $base = new Database();
 $con = $base->connect();
 $sql = "select * from usuarios where nombre= \"".$user."\" and password= \"".$pass."\"";
 
-
-
-print $sql;
 $query = $con->query($sql);
 $found = false;
 $userid = null;
@@ -21,8 +18,7 @@ while($r = $query->fetch_array()){
 }
 
 if($found==true) {
-	session_start();
-	print $userid;
+	session_start();	
 	$_SESSION['id']=$userid ;
 	$_SESSION['nombre_usuario']=$user;
 	$_SESSION['password']=$pass;
@@ -32,6 +28,10 @@ if($found==true) {
 	print "Cargando ... $user";
 	print "<script>window.location='./';</script>";
 }else {
+	echo'<script type="text/javascript">
+    alert("Contraseña o Usuario incorrecto");
+    window.location.href="index.php";
+    </script>';
 	print "<script>window.location='./';</script>";
 }
 ?>

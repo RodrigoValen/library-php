@@ -7,7 +7,8 @@
   <title>.: Mantenedores :.</title>
 
   <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-  <link rel="stylesheet" type="text/css" href="css/font-awesome/css/font-awesome.min.css">
+ <!-- <link rel="stylesheet" type="text/css" href="css/font-awesome/css/font-awesome.min.css"> -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" type="text/css" href="css/dashboard/dashboard.css">
   <link rel="stylesheet" type="text/css" href="css/themes/black.css">
   <!--
@@ -37,15 +38,12 @@
           </a>
         </li>
         <li class="sidebar-list">
-          <a href="./">Inicio <span class="menu-icon fa fa-home"></span></a>
-        </li>
-
-
-        <li class="sidebar-list">
-          <a href="./index.php?view=producto">Producto <span class="menu-icon fa fa-book"></span></a>
-          <a href="./index.php?view=cervecerias">Cervecerias <span class="menu-icon fa fa-beer"></span></a>
-          <a href="./index.php?view=bares">Bares <span class="menu-icon fa fa-male"></span></a>
-          <a href="./index.php?view=registro">Registro <span class="menu-icon fa fa-user"></span></a>
+        <a href="./#">Inicio <span class="menu-icon fa fa-home"></span></a>  
+        <a href="./index.php?view=dashboard">Dashboard <span class="menu-icon fa fa-tachometer"></span></a>        
+          <a href="./index.php?view=producto">Producto <span class="menu-icon fa fa-beer"></span></a>
+          <a href="./index.php?view=cervecerias">Cervecerias <span class="menu-icon fa fa-industry"></span></a>
+          <a href="./index.php?view=bares">Bares <span class="menu-icon fa fa-glass"></span></a>
+          <a href="./index.php?view=registro">Registro <span class="menu-icon fa fa-archive"></span></a>
           </li>
 
     </div>

@@ -2,7 +2,7 @@
 
 $login = $_SESSION['nombre_usuario'];
 $password = $_SESSION['password'];
-$url = 'http://api.catalogos.local/Cervecerias.php'; 
+$url = 'http://localhost/Catalogo-libros/Cervecerias.php'; 
 $ch = curl_init();
 curl_setopt($ch, CURLOPT_URL,$url); 
 curl_setopt($ch, CURLOPT_RETURNTRANSFER,1); 
@@ -30,13 +30,19 @@ curl_close($ch);
 <?php endif; ?>
               <div class="widget">
                 <div class="widget-title">
-                  <i class="fa fa-male"></i> Cervecerias
+                  <i class="fa fa-industry"></i> Cervecerias
                 </div>
                 <div class="widget-body no-padding">
 
                   <div class="table-responsive">
 <?php if(count($cervecerias)>0):?>
                     <table class="table">
+                    <thead class= "thead">
+                    <tr>
+                        <td>Nombre</td>
+                        <td>Acciones</td>
+                        </tr>
+                    </thead>
                       <tbody>
                       <?php foreach($cervecerias as $cerveceria):?>
                         <tr>

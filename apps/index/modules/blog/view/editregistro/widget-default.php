@@ -2,7 +2,7 @@
      <?php
       $login = $_SESSION['nombre_usuario'];
       $password = $_SESSION['password'];
-      $url = 'http://api.catalogos.local/Cervecerias.php';
+      $url = 'http://localhost/Catalogo-libros/Cervecerias.php';
       $ch = curl_init();
       curl_setopt($ch, CURLOPT_URL,$url);
       curl_setopt($ch, CURLOPT_RETURNTRANSFER,1);
@@ -13,7 +13,7 @@
       $cervcerias = $data['cerveceria'];
       curl_close($ch);
 
-      $url = 'http://api.catalogos.local/productos.php/';
+      $url = 'http://localhost/Catalogo-libros/productos.php/';
       $ch = curl_init();
       curl_setopt($ch, CURLOPT_URL,$url);
       curl_setopt($ch, CURLOPT_RETURNTRANSFER,1);
@@ -24,7 +24,7 @@
       $productos = $data['cerveza'];
       curl_close($ch);
 
-      $url = 'http://api.catalogos.local/bares.php/';
+      $url = 'http://localhost/Catalogo-libros/bares.php/';
       $ch = curl_init();
       curl_setopt($ch, CURLOPT_URL,$url);
       curl_setopt($ch, CURLOPT_RETURNTRANSFER,1);
@@ -37,7 +37,7 @@
 
       $login = $_SESSION['nombre_usuario'];
       $password = $_SESSION['password'];
-      $url = 'http://api.catalogos.local/registros.php?id_registro='.$_GET["id"];
+      $url = 'http://localhost/Catalogo-libros/registros.php?id_registro='.$_GET["id"];
       $ch = curl_init();
       curl_setopt($ch, CURLOPT_URL, $url);
       curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);

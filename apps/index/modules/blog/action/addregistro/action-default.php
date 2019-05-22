@@ -23,7 +23,7 @@
 			'etiqueta' => $_POST["etiqueta"]
 		];
 
-		$ch = curl_init('http://api.catalogos.local/registros.php');
+		$ch = curl_init('http://localhost/Catalogo-libros/registros.php');
 		curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 		curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($post));

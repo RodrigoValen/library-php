@@ -14,7 +14,7 @@ if (count($_POST) > 0)
         'nombre' => $_POST["nombre"],
         'familia' => $_POST['familia']
     ];
-    $url ='http://api.catalogos.local/productos.php/?id_producto='.$_POST["id"];
+    $url ='http://localhost/Catalogo-libros/productos.php/?id_producto='.$_POST["id"];
     print_r($url);
     $ch = curl_init($url);
     curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "PUT");

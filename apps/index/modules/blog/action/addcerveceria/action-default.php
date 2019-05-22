@@ -11,7 +11,7 @@
 			'nombre' => $_POST["nombre"]
 		];
 
-		$ch = curl_init('http://api.catalogos.local/cervecerias.php');
+		$ch = curl_init('http://localhost/Catalogo-libros/cervecerias.php');
 		curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 		curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($post));

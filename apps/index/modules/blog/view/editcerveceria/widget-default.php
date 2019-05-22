@@ -6,7 +6,7 @@
 
 $login = $_SESSION['nombre_usuario'];
 $password = $_SESSION['password'];
-$url = 'http://api.catalogos.local/cervecerias.php/?id_cerveceria='.$_GET["id"];
+$url = 'http://localhost/Catalogo-libros/cervecerias.php/?id_cerveceria='.$_GET["id"];
 $ch = curl_init();
 curl_setopt($ch, CURLOPT_URL,$url);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER,1);

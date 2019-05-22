@@ -11,7 +11,7 @@
         'nombre' => $_POST["nombre"]
         ];
 
-    $url ='http://api.catalogos.local/cervecerias.php/?id_cerveceria='.$_POST["id"];
+    $url ='http://localhost/Catalogo-libros/cervecerias.php/?id_cerveceria='.$_POST["id"];
     $ch = curl_init($url);
     curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "PUT");
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);

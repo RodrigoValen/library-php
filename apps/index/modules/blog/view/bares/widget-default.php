@@ -8,7 +8,7 @@ $autores= $a->select("one","");*/
 
 $login = $_SESSION['nombre_usuario'];
 $password = $_SESSION['password'];
-$url = "http://api.catalogos.local/bares.php"; 
+$url = "http://localhost/Catalogo-libros/bares.php"; 
 $ch = curl_init();
 curl_setopt($ch, CURLOPT_URL,$url); 
 curl_setopt($ch, CURLOPT_RETURNTRANSFER,1); 
@@ -38,18 +38,18 @@ curl_close($ch);
 <?php endif; ?>
               <div class="widget">
                 <div class="widget-title">
-                  <i class="fa fa-male"></i> Bares 
+                  <i class="fa fa-glass"></i> Bares 
                 </div>
                 <div class="widget-body no-padding">
 
                   <div class="table-responsive">
 <?php if(count($bares)>0):?>
-<table class="table" >
-                    <thead>
-                    <tr>
+                  <table class="table" >
+                    <thead class= "thead">
+                      <tr>
                         <td>Nombre</td>
                         <td>Sucursal</td>
-                        <td>Direccion</td>
+                        <td>Dirección</td>
                         <td>Acciones</td>
                         </tr>
                     </thead>
@@ -64,7 +64,7 @@ curl_close($ch);
                         </tr>
                       <?php endforeach;?>
                       </tbody>
-                    </table>
+                  </table>
 <?php endif; ?>
                   </div>
                 </div>

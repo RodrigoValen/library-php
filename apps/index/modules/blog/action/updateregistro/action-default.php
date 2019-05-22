@@ -23,7 +23,7 @@
     ];
 
 
-    $url ='http://api.catalogos.local/registros.php/?id_registro='.$_POST["id"];
+    $url ='http://localhost/Catalogo-libros/registros.php/?id_registro='.$_POST["id"];
 
 
     $ch = curl_init($url);

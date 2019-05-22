@@ -14,7 +14,7 @@ if(count($_POST)>0)
         'direccion_sucursal' => $_POST["direccion_sucursal"]
     ];
 
-    $ch = curl_init('http://api.catalogos.local/bares.php');
+    $ch = curl_init('http://localhost/Catalogo-libros/bares.php');
     curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
     curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($post));

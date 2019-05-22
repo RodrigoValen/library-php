@@ -2,7 +2,7 @@
 
 $login = $_SESSION['nombre_usuario'];
 $password = $_SESSION['password'];
-$url = 'http://api.catalogos.local/registros.php';
+$url = 'http://localhost/Catalogo-libros/registros.php';
 $ch = curl_init();
 curl_setopt($ch, CURLOPT_URL, $url);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
@@ -19,7 +19,7 @@ function getbar($id_bar)
 
     $login = $_SESSION['nombre_usuario'];
     $password = $_SESSION['password'];
-    $url = 'http://api.catalogos.local/bares.php/?id_bar=' . $id_bar;
+    $url = 'http://localhost/Catalogo-libros/bares.php/?id_bar=' . $id_bar;
     $ch = curl_init();
     curl_setopt($ch, CURLOPT_URL, $url);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
@@ -36,7 +36,7 @@ function getproducto($id_producto)
 
     $login = $_SESSION['nombre_usuario'];
     $password = $_SESSION['password'];
-    $url = 'http://api.catalogos.local/productos.php/?id_producto='.$id_producto;
+    $url = 'http://localhost/Catalogo-libros/productos.php/?id_producto='.$id_producto;
     $ch = curl_init();
     curl_setopt($ch, CURLOPT_URL, $url);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
@@ -52,7 +52,7 @@ function getcerveceria($id_cerveceria)
 
     $login = $_SESSION['nombre_usuario'];
     $password = $_SESSION['password'];
-    $url = 'http://api.catalogos.local/cervecerias.php/?id_cerveceria='.$id_cerveceria;
+    $url = 'http://localhost/Catalogo-libros/cervecerias.php/?id_cerveceria='.$id_cerveceria;
     $ch = curl_init();
     curl_setopt($ch, CURLOPT_URL, $url);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
@@ -80,14 +80,14 @@ function getcerveceria($id_cerveceria)
 <?php endif;?>
               <div class="widget">
                 <div class="widget-title">
-                  <i class="fa fa-male"></i> Registros
+                  <i class="fa fa-archive"></i> Registros
                 </div>
                 <div class="widget-body no-padding">
 
                   <div class="table-responsive">
 <?php if (count($registros) > 0): ?>
                     <table class="table" >
-                    <thead>
+                    <thead class= "thead">
                     <tr>
                         <td>Bar</td>
                         <td>Producto</td>

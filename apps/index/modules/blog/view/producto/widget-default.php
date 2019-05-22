@@ -6,7 +6,7 @@
 // print_r($autores);
 $login = $_SESSION['nombre_usuario'];
 $password = $_SESSION['password'];
-$url = 'http://api.catalogos.local/productos.php/';
+$url = 'http://localhost/Catalogo-libros/productos.php/';
 $ch = curl_init();
 curl_setopt($ch, CURLOPT_URL,$url);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER,1);
@@ -32,20 +32,20 @@ curl_close($ch);
             <h1>Cervezas</h1>
               <div class="widget">
                 <div class="widget-title">
-                  <i class="fa fa-book"></i>Cervezas
+                  <i class="fa fa-beer"></i>Cervezas
                 </div>
                 <div class="widget-body no-padding">
 
                   <div class="table-responsive">
 <?php if(count($autores)>0):?>
-                    <table class="table ">
-                    <thead>
-                    <tr>
-                        <td>Nombre</td>
-                        <td>Familia</td>
-
-                        </tr>
-                    </thead>
+                    <table class="table">
+                      <thead class= "thead">
+                      <tr>
+                          <td>Nombre</td>
+                          <td>Familia</td>
+                          <td>Acciones</td>
+                          </tr>
+                      </thead>
                       <tbody>
                       <?php foreach($autores as $autor):?>
                         <tr>
@@ -53,7 +53,7 @@ curl_close($ch);
                         <td><?php echo $autor["familia"];?></td>
                         <td><a href="./index.php?view=editcerveza&id=<?php echo $autor["id"]; ?>" class="btn btn-warning btn-xs">Editar</a>
                         <a href="./index.php?action=delcerveza&id=<?php echo $autor["id"]; ?>" class="btn btn-danger btn-xs">Eliminar</a></td>
-                        </tr>
+                        
                       <?php endforeach; ?>
                       </tbody>
                     </table>

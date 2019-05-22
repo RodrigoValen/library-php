@@ -5,7 +5,7 @@ $login = $_SESSION['nombre_usuario'];
 $password = $_SESSION['password'];
 $id = $_GET["id"];
 //var_dump($id);
-$url = 'http://api.catalogos.local/productos.php/?id_producto='.$_GET["id"];
+$url = 'http://localhost/Catalogo-libros/productos.php/?id_producto='.$_GET["id"];
 $ch = curl_init();
 curl_setopt($ch, CURLOPT_URL,$url);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER,1);

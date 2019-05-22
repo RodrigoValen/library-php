@@ -13,7 +13,7 @@
         'direccion_sucursal' => $_POST["direccion_sucursal"]
         ];
     
-    $url ='http://api.catalogos.local/bares.php/?id_bar='.$_POST["id"];
+    $url ='http://localhost/Catalogo-libros/bares.php/?id_bar='.$_POST["id"];
 
     $ch = curl_init($url);
     curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "PUT");
